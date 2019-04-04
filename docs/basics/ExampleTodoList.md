@@ -1,3 +1,10 @@
+---
+id: example
+title: Example: Todo List
+sidebar_label: Example: Todo List
+hide_title: true
+---
+
 # Example: Todo List
 
 This is the complete source code of the tiny todo app we built during the [basics tutorial](./README.md). This code is also in [our repository of examples](https://github.com/reduxjs/redux/tree/master/examples/todos/src) and can be [run in your browser via CodeSandbox](https://codesandbox.io/s/github/reduxjs/redux/tree/master/examples/todos).
@@ -70,9 +77,8 @@ const todos = (state = [], action) => {
         }
       ]
     case 'TOGGLE_TODO':
-      return state.map(
-        todo =>
-          todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+      return state.map(todo =>
+        todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
       )
     default:
       return state
